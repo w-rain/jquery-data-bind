@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <title ng-bind="pageTitle">jquery实现双向数据绑定</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <script type="text/javascript" src="./js/libs/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="./js/dataBind.js"></script>
+</head>
+<body>
+    <div class="item">
+
+        <label>用户名: </label>
+        <input type="text" data-bind-user="name" />
+    </div>
+
+    <div class="item">
+        <label>用户名: </label>
+        <span data-bind-user="name"></span>
+    </div>
+
+    <div class="item">
+        <input type="button" id="btnSet" value="设置" />
+    </div>
+
+    <script type="text/javascript">
+        
+        var user = new User('user');
+
+        $('#btnSet').bind('click',function(event){
+            user.set('name','wy');
+        });
+
+    </script>
+</body>
+</html>
